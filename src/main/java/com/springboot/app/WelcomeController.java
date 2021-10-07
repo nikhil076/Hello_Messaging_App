@@ -21,4 +21,9 @@ public class WelcomeController {
 	public String sayHello(@RequestParam(value = "name") String name) {
 		return "Hello " + name + "!!!";
 	}
+	
+	@GetMapping("/param/{name}")
+	public String sayHelloparam(@PathVariable String name) {
+		return "Hello "+ name + "!";
+	}
 }
