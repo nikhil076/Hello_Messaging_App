@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.app.model.User;
+
 @RestController
 public class WelcomeController {
 	
@@ -25,5 +27,10 @@ public class WelcomeController {
 	@GetMapping("/param/{name}")
 	public String sayHelloparam(@PathVariable String name) {
 		return "Hello "+ name + "!";
+	}
+	
+	@PostMapping("/post")
+	public String sayHello(@RequestBody User user){
+		return "Hello "+user.getFirstName() + " " +user.getLastName() + " ";
 	}
 }
