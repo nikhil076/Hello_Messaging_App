@@ -33,4 +33,10 @@ public class WelcomeController {
 	public String sayHello(@RequestBody User user){
 		return "Hello "+user.getFirstName() + " " +user.getLastName() + " ";
 	}
+	
+	@PutMapping("/put/{firstName}")
+	public String sayHello(@PathVariable String firstName,
+							@RequestParam(value = "lastName") String lastName) {
+		return "Hellooo " + firstName + " " + lastName + "!";
+	}
 }
